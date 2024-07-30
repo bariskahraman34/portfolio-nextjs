@@ -67,7 +67,6 @@ export default function Background() {
       const numRows = Math.ceil(height/40);
       setRows(new Array(numRows).fill(0));
     }, []);
-    console.log(rows)
 
   return (
     <section className="background">

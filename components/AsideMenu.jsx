@@ -7,7 +7,7 @@ export default function AsideMenu() {
       <nav className="navigation">
         <ul>
           <li>
-            <a href="../public/files/barisKahramanResume.pdf" target="_blank" className="tooltip" data-tooltip="CV Görüntüle">
+            <a href="/files/barisKahramanResume.pdf" target="_blank" className="tooltip" data-tooltip="CV Görüntüle">
               <FontAwesomeIcon icon={faFile} />
             </a>
           </li>
