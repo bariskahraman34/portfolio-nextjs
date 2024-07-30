@@ -1,8 +1,10 @@
 import { Lexend } from "next/font/google";
 import "./globals.css";
+import "./background.css"
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import AsideMenu from "@/components/AsideMenu";
+import Background from "@/components/Background";
 config.autoAddCss = false;
 
 const lexend = Lexend({ subsets: ["latin"] });
@@ -16,6 +18,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="tr">
       <body className={lexend.className}>
+        <Background />
         <AsideMenu />
         {children}
       </body>
