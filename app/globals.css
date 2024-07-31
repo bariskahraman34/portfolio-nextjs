@@ -1,5 +1,5 @@
 :root{
-    --dark-bg-color: #0b0b0b;
+    --dark-bg-color: #020202;
     --light-color: #f3f3f3;
     --green-color: #13be81;
 }
@@ -21,7 +21,7 @@ ul{
 
 body{
     position: relative;
-    background: #141317;
+    background: var(--dark-bg-color);
     color: var(--light-color);
 }
 
@@ -67,6 +67,7 @@ header .links-list{
     display: flex;
     align-items: center;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 header .links-list .link{
@@ -96,8 +97,9 @@ header .description{
 
 #tools .card-container{
     display: grid;
-    grid-template-columns: repeat(3,1fr);
-    row-gap: 20px;
+    grid-template-columns: repeat(4,1fr);
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
     justify-items: center;
     margin-block: 30px;
 }
@@ -105,13 +107,20 @@ header .description{
 #tools .card-container .card{
     cursor: pointer;
     position: relative;
-    margin-bottom: 20px;
     padding: 40px;
     border-radius: 10px;
     background-color: #2d2f33;
 }
 
 #tools .card .svg-inline--fa {
+    font-size: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#tools .card.custom-svg svg{
     font-size: 40px;
     position: absolute;
     top: 50%;
@@ -185,6 +194,7 @@ aside .navigation ul {
 
 .tooltip:hover::before,
 .tooltip:hover::after{
+    z-index: 9999;
     --scale:1;
 
 }
@@ -246,6 +256,8 @@ aside .navigation ul {
         padding-bottom: 8px;
     }
     img{
+        width: auto !important;
+        height: auto !important;
         max-width: 100%;
         max-height: 100%;
         object-fit: contain;
@@ -332,6 +344,7 @@ aside .navigation ul {
 
 #projects .card-container .card:hover img{
     transform: scale(1.1);
+    border-radius: 25px;
 }
 
 #projects .card-container .card h3{
@@ -367,10 +380,22 @@ aside .navigation ul {
 
 @media(width < 768px){
     aside .navigation ul{
-        top: -185px;
+        top: 10px;
         left: 50%;
-        transform: translateX(-50%) rotate(90deg) scale(.78);
-        position: absolute;
+        transform: translateX(-50%);
+        flex-direction: row;
+        position: fixed;
+        padding: 10px 20px;
+        gap: 20px;
+        a{
+            padding: 20px;
+            width: 50px;
+            height: 50px;
+            svg{
+                transform: rotate(90deg);
+            }
+        }
+
     }
 
     .tooltip::after , .tooltip::before{
